@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+TestModel.create!(datetime: '2020-01-01 12:34:56 UTC')
+TestModel.create!(datetime: '2020-01-01 12:34:56 PST')
