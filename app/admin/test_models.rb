@@ -6,6 +6,8 @@ ActiveAdmin.register TestModel do
     column :datetime do |obj|
       obj.datetime&.strftime('%c %Z %z')
     end
+    column :date
+    column :time
     column :created_at do |obj|
       obj.created_at&.strftime('%c %Z %z')
     end
@@ -18,6 +20,8 @@ ActiveAdmin.register TestModel do
   form do |f|
     f.inputs do
       f.input :datetime, as: :datepicker_with_time
+      f.input :date, as: :datepicker
+      f.input :time, as: :select, collection: (0..23).map {|h| (0..59).select {|m| m % 5 == 0 }.map {|m| ['%02i' % h, '%02i' % m].join(':') } }.flatten
     end
 
     f.actions
