@@ -1,5 +1,6 @@
 ActiveAdmin.register TestModel do
   actions :all, except: :show
+  permit_params :datetime
 
   index do
     id_column
